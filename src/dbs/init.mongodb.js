@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 import {countConnect} from "../helpers/check.connect.js"
-
-const connectString = "mongodb://localhost:27017/shopDEV";
+import getConfig from "../configs/config.mongodb.js";
 
 class Database {
     constructor() {
@@ -11,11 +10,15 @@ class Database {
     // connect
     async connect(type = 'mongodb') {
         try {
+            const { db: { host, name, port } } = getConfig();
+            const connectString = `mongodb://${host}:${port}/${name}`;
+
             if (1 === 1) {
                 // mongoose.set("debug", true);
                 mongoose.set("debug", {color: true});
             }
 
+            console.log(connectString);
             await mongoose.connect(connectString, {
                 maxPoolSize: 20
             });
