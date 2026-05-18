@@ -27,8 +27,8 @@ app.use(compression())
 // init db
 Database.getInstance()
 
-countConnect()
-checkOverload()
+// countConnect()
+// checkOverload()
 
 // init routes
 app.use('/api/v1', router);
