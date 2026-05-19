@@ -2,7 +2,7 @@
 
 import bcrypt from 'bcrypt';
 import Shop from '../models/shop.model.js';
-import crypto from "crypto";
+import crypto from "node:crypto";
 import createTokenPair from '../auth/authUtils.js';
 import KeyTokenService from './keyToken.service.js';
 import { getInfoData } from '../utils/index.js';
