@@ -30,4 +30,4 @@ const apiKeySchema = new Schema({
     timestamps: true
 });
 
-export default mongoose.model(DOCUMENT_NAME, apiKeySchema);
+export default model(DOCUMENT_NAME, apiKeySchema);

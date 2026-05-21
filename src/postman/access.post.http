@@ -6,6 +6,7 @@
 ### signUp
 POST {{baseUrl}}/access/shop/signup
 Content-Type: application/json
+x-api-key: 42a9cd9c726fc6d859899784ac0dd48e1d59cd09fa2e7f76ce170fc32d315c8fdbe6efa970555ee51d401ed0554856512d5e3747feb4adaa596d48eb46795233
 
 {
     "name": "Shop Test",

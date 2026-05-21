@@ -34,5 +34,24 @@ Database.getInstance()
 app.use('/api/v1', router);
 
 // handle errors
+app.use((req, res, next) => {
+    const error = new Error('Not Found');
+    error.status = 404;
+    next(error);
+});
+
+app.use((err, req, res, next) => {
+    console.error({
+        message: err.message,
+        stack: err.stack,
+        path: req.path,
+        method: req.method
+    });
+    res.status(err.status || 500).json({
+        success: false,
+        message:  err.message || "Internal Server Error",
+        errorCode: err.code || "UNKNOWN_ERROR"
+    });
+});
 
 export default app;
